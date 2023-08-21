@@ -58,5 +58,4 @@ class FirebaseAuth {
         print('Facebook Login error: $e');
     }
   }
-
 }
