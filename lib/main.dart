@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'SignupPage.dart';
+import 'ViewController/SignupPage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MainApp extends StatelessWidget {
+  const MainApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue
       ),
       home: const SignUpPage(),
+      //這邊需要區分三種狀態：
+      ///1. 登入中
+      ///2. 未登入
     );
   }
 }
