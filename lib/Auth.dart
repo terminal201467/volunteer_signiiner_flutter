@@ -1,15 +1,20 @@
+// ignore_for_file: avoid_print, unused_local_variable, body_might_complete_normally_nullable
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
-class FirebaseAuth {
+class Auth {
 
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final FirebaseAuth _fireBaseAuth = FirebaseAuth.instance;
+  final FacebookAuth _facebookAuth = FacebookAuth.instance;
     //一般註冊
-      Future<void> _register() async {
+      Future<void> register(String email, String password) async {
         try {
-            UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
-            email: _emailController.text,
-            password: _passwordController.text,
+            UserCredential userCredential = await _fireBaseAuth.createUserWithEmailAndPassword(
+            email: email,
+            password: password,
         );
             print('Registration successful: ${userCredential.user!.email}');
             } catch (e) {
@@ -20,19 +25,18 @@ class FirebaseAuth {
     //一般登入
     Future<User?> signInWithEmailPassword(String email, String password) async {
         try {
-        UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+        UserCredential userCredential = await _fireBaseAuth.signInWithEmailAndPassword(
             email: email,
             password: password,
         );
-        return userCredential.user;
-            } catch (e) {
+          } catch (e) {
             print('Login failed: $e');
         return null;
         }
     }
 
     //Google登入
-    Future<void> _handleGoogleSignIn() async {
+    Future<void> handleGoogleSignIn() async {
         try {
             final GoogleSignInAccount? googleSignInAccount = await _googleSignIn.signIn();
             if (googleSignInAccount != null) {
@@ -46,14 +50,16 @@ class FirebaseAuth {
     }
 
     //Facebook登入
-      Future<void> _loginWithFacebook(BuildContext context) async {
+      Future<void> loginWithFacebook() async {
         try {
-            final LoginResult result = await FacebookAuth.instance.login();
+            final LoginResult result = await _facebookAuth.login();
         if (result.status == LoginStatus.success) {
             final AccessToken accessToken = result.accessToken!;
             print('Facebook Login successful. Access Token: ${accessToken.token}');
         } else {
             print('Facebook Login failed: ${result.message}'); 
+        } 
+        
         } catch (e) {
         print('Facebook Login error: $e');
     }
