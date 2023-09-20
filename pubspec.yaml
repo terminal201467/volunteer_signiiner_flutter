@@ -63,6 +63,11 @@ flutter:
   assets:
     - assets/images/facebook.png
     - assets/images/google.png
+    - assets/images/huiLaiLogo.pdf
+    - assets/images/huiLaiMainLogo.png
+    - assets/images/appIcon.png
+    - assets/images/appIconPDF.pdf
+
   # https://flutter.dev/assets-and-images/#resolution-aware
 
   # For details regarding adding assets from package dependencies, see

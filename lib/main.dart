@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'ViewController/SignupPage.dart';
+import 'Views/DivideMassesPage.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: const SignUpPage(),
+      home: const DivideMassesPage(),
       //這邊需要區分三種狀態：
       ///1. 登入中
       ///2. 未登入
