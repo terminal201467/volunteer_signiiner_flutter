@@ -1,16 +1,9 @@
-# volunteer_signiiner_flutter
+# volunteer_signiiner_flutter(惠來社區通)
 
-A new Flutter project.
+## 主要功能：
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. 協助惠來關懷服務協會管理志工與日常出勤
+2. 志工註冊登入
+3. 管理者註冊登入
+4. 第三方登入（Facebook、Google）
+5. 志工可選擇活動掃描QRCode參與志工活動
