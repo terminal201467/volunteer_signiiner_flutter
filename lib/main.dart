@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:volunteer_signiiner_flutter/Views/RegisterPage.dart';
 import 'Views/DivideMassesPage.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: const DivideMassesPage(),
+      home: const RegisterPage(),
       //這邊需要區分三種狀態：
       ///1. 登入中
       ///2. 未登入

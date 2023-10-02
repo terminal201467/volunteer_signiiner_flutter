@@ -14,7 +14,6 @@ class ColorManager {
 
   //-----------------------------ThemeColors-------------------------------
   //志工登入Button顏色
-  static const Color volunteerColor = Colors.green;
-  //管理者登入Button顏色
+  //管理者登入Button顏`色
   static const Color managerColor = Colors.lightBlue;
 }
