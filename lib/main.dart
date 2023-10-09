@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: const RegisterPage(),
+      home: const DivideMassesPage(),
       //這邊需要區分三種狀態：
       ///1. 登入中
       ///2. 未登入

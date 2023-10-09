@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:volunteer_signiiner_flutter/Views/LoginPage.dart';
+import 'package:volunteer_signiiner_flutter/Views/RegisterPage.dart';
 
 class DivideMassesPage extends StatelessWidget {
   const DivideMassesPage({Key? key}) : super(key: key);
@@ -7,7 +9,7 @@ class DivideMassesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('分眾頁面'),
+        title: const Center(child:Text('分眾頁面')),
       ),
       body: Center(
         child: Column(
@@ -26,7 +28,9 @@ class DivideMassesPage extends StatelessWidget {
               width: 200.0,
               height: 40.0,
               child: ElevatedButton(onPressed: () {
-                  // 处理按钮点击事件
+                  Navigator.push(context,
+                   MaterialPageRoute(builder: (context) => const LoginPage(),)
+                  );
               },
               style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white, // 绿色背景
@@ -45,6 +49,9 @@ class DivideMassesPage extends StatelessWidget {
               height: 40.0,
               child: ElevatedButton(onPressed: () {
                   // 处理按钮点击事件
+                  Navigator.push(context,
+                   MaterialPageRoute(builder: (context) => const LoginPage(),)
+                  );
               },
               style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white, // 绿色背景
@@ -52,7 +59,7 @@ class DivideMassesPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(20), // 圆角
                   ),
                 ),
-              child: const Text('志工登入'),
+              child: const Text('管理者登入'),
              ),
             ),
             const SizedBox(height: 10),// 增加一些垂直间距
