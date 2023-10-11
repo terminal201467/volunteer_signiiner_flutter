@@ -4,17 +4,6 @@ class LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
-  }
-}
-
-class LoginPage extends StatefulWidget{
-  const LoginPage({Key? key}) : super(key: key);
-
-  @override LoginPageState createState() => LoginPageState();
-
-  @override 
-  Widget(BuildContext context) {
     return Scaffold(
             appBar: AppBar(
         leading:IconButton(
@@ -26,37 +15,66 @@ class LoginPage extends StatefulWidget{
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Container(
+              width: 300,
+              height: 100,
+              child: const Text('使用者登入',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 30),
+              ),
+            ),
+            Container(
+              width: 300,
+              height: 100,
               child: TextField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0),),
                   hintText: '輸入帳號',
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            // const SizedBox(height: 5),
             Container(
+              width: 300,
+              height: 100,
               child: TextField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
                   hintText: '輸入密碼'
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            // const SizedBox(height: 5),
             Container(
+              width: 300,
+              height: 50,
               child: ElevatedButton(
-                child: Text('登入'),
-                  onPressed: () {
-                    
-                  },
-              ),
+                  style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0), // 在这里设置圆角半径
+                  ),
+                ),
+                onPressed: () {
+                  // 按钮被点击时的操作
+                },
+                child: Text('登入',
+                      textAlign: TextAlign.center, // 文本水平居中对齐
+                      style: TextStyle(fontSize: 20),),
+              )
             ),
-            const SizedBox(height: 20)
+            const SizedBox(height: 5)
           ],
         ),
       ),
     );
   }
+}
+
+class LoginPage extends StatefulWidget{
+  const LoginPage({Key? key}) : super(key: key);
+
+  @override LoginPageState createState() => LoginPageState();
+
 }
