@@ -59,12 +59,44 @@ class LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   // 按钮被点击时的操作
                 },
-                child: Text('登入',
+                child: const Text('登入',
                       textAlign: TextAlign.center, // 文本水平居中对齐
                       style: TextStyle(fontSize: 20),),
               )
             ),
-            const SizedBox(height: 5)
+            const SizedBox(height: 20),
+            Container(
+              width: 300,
+              height: 100,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0)
+                    ),
+                  ),
+                  onPressed: () {
+                    
+                  },
+                  child: Image.asset('assets/images/google.png'),
+                ),
+                const SizedBox(width: 20),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0)
+                    ),
+                  ),
+                  onPressed: () {
+                    
+                  },
+                  child: Image.asset('assets/images/facebook.png'),
+                ),
+              ],
+            ))
           ],
         ),
       ),
