@@ -69,11 +69,13 @@ class LoginPageState extends State<LoginPage> {
               width: 300,
               height: 100,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
+                  Expanded(
+                    child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0)
                     ),
@@ -81,11 +83,30 @@ class LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     
                   },
-                  child: Image.asset('assets/images/google.png'),
+                  child: Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/images/google.png',
+                          width: 50,
+                          height: 50,
+                          fit: BoxFit.fill,),
+                      const Text('google登入',
+                            style: TextStyle(
+                            color: Colors.black
+                            ),
+                          )
+                      ],
+                    ),
+                  )
                 ),
+                  ),
+
                 const SizedBox(width: 20),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
+                Expanded(
+                    child:ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0)
                     ),
@@ -93,8 +114,24 @@ class LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     
                   },
-                  child: Image.asset('assets/images/facebook.png'),
-                ),
+                  child: Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/images/facebook.png',
+                          width: 50,
+                          height: 50,
+                          fit: BoxFit.fill,),
+                      const Text('Facebook登入',
+                            style: TextStyle(
+                              color: Colors.black
+                            ),
+                          )
+                      ],
+                    ),
+                  ),
+                ), 
+                )
               ],
             ))
           ],
