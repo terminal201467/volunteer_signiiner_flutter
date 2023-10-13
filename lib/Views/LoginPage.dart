@@ -96,12 +96,11 @@ class LoginPageState extends State<LoginPage> {
                             color: Colors.black
                             ),
                           )
-                      ],
-                    ),
-                  )
-                ),
+                        ],
+                      ),
+                    )
                   ),
-
+                ),
                 const SizedBox(width: 20),
                 Expanded(
                     child:ElevatedButton(
@@ -127,13 +126,26 @@ class LoginPageState extends State<LoginPage> {
                               color: Colors.black
                             ),
                           )
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ), 
+                  ), 
                 )
               ],
-            ))
+            )),
+            const SizedBox(height: 20,),
+            Container(
+              child: TextButton(
+                child: Text('還未註冊嗎？',
+                style: TextStyle(fontSize: 18,
+                color: Colors.blue,
+                fontFamily: 'Roboto'),
+                ),
+                onPressed: () {
+                  //推到註冊頁面的Route
+                },
+              ),
+            )
           ],
         ),
       ),
