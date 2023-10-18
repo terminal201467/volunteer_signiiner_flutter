@@ -10,6 +10,21 @@ class ManagerHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(
+        actions: [
+          const SizedBox.shrink(),
+          IconButton(
+            icon: Image.asset('assets/qrcode.viewfinder.png'),
+            onPressed: () {
+              
+            },
+          )
+        ],
+      ),
+      body: Container(
+
+      ),
+    );
   }
 }

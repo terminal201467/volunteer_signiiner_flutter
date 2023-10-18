@@ -68,6 +68,8 @@ flutter:
     - assets/images/huiLaiMainLogo.png
     - assets/images/appIcon.png
     - assets/images/appIconPDF.pdf
+    - assets/images/qrcode.png
+    - assets/images/qrcode.viewfinder.png
 
   # https://flutter.dev/assets-and-images/#resolution-aware
 
