@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
@@ -12,44 +10,40 @@ class VolunteerHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-        return Scaffold(
-      appBar: AppBar(
-        title: const Center(child: Text('志工首頁')),
-        leading: IconButton(
-            icon: Image.asset('assets/images/qrcode.png',
-                width: 30,
-                height: 30),
-            onPressed: () {
-              
-            },
-          ),
-        actions: [
-          IconButton(
-            icon: Image.asset('assets/images/qrcode.viewfinder.png',
-                width: 30,
-                height: 30,),
-            onPressed: () {
-              
-            },
-          )
+      return CustomScrollView(
+        slivers: <Widget>[
+            SliverAppBar(
+              pinned: true, // 表頭固定在頂部
+              expandedHeight: 200.0, // 表頭的高度
+              flexibleSpace: FlexibleSpaceBar(
+              title: Text('表頭標題'),
+              background: Image.network('https://example.com/header_image.jpg', fit: BoxFit.cover),
+              ),
+            ),
+            SilverToBoxAdapter(
+              child: Container(
+                child: Column(
+                  children: [
+                    Image.asset('assets/images/appIcon.png'),
+                    Text('志工編號'),
+                    Text('Hello，穆辴！'),
+                    Container(
+                      child: Text('已登入志工服務中')
+                    ),
+                  ],
+                ),
+              ),
+            )
         ],
-      ),
-      body: Container(
-        child: const Column(
-          children: [
-             Text('Hello，穆辴！'),
-             Text('本週服務天數'),
-
-          ],
-        ),
-      ),
-    );
+      );
   }
 }
 
 
-//WeekListView
 
+//Contents
+
+//WeekListView
 Widget setWeekListView(BuildContext context, List<int> serveDate) {
   final List<String> weekDays = ["一", "二", "三", "四", "五", "六", "日"];
   return ListView(
