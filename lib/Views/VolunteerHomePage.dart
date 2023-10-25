@@ -5,37 +5,74 @@ import 'package:flutter/material.dart';
   ///1. 可以點選要打開相機的Button，打開QRCode掃描頁面
   ///2. 志工使用的狀態頁面(已經登入)
   ///3. 達成服務目標
+class VolunteerHomePage extends StatefulWidget {
 
-class VolunteerHomePage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-      return CustomScrollView(
-        slivers: <Widget>[
-            SliverAppBar(
-              pinned: true, // 表頭固定在頂部
-              expandedHeight: 200.0, // 表頭的高度
-              flexibleSpace: FlexibleSpaceBar(
-              title: Text('表頭標題'),
-              background: Image.network('https://example.com/header_image.jpg', fit: BoxFit.cover),
+  VolunteerHomePageState createState() => VolunteerHomePageState();
+  }
+
+
+class VolunteerHomePageState extends State<VolunteerHomePage> {
+  
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Center(child: Text('志工首頁'))
+    ),
+    body: CustomScrollView(
+    slivers: <Widget>[
+      SliverToBoxAdapter(
+        child: Container(
+          child: Column(
+            children: [
+              Image.asset('assets/images/appIcon.png',
+                  width: 100,
+                  height: 100
               ),
-            ),
-            SilverToBoxAdapter(
-              child: Container(
+              SizedBox(height: 10),
+              Container(
+                width: 150,
+                height: 100,
                 child: Column(
                   children: [
-                    Image.asset('assets/images/appIcon.png'),
-                    Text('志工編號'),
-                    Text('Hello，穆辴！'),
-                    Container(
-                      child: Text('已登入志工服務中')
+                    Text('志工編號：1234567',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'Roboto'
+                        ),
+                      ),
+                    const SizedBox(height: 10),
+                    Text('Hello，穆辴！',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'Roboto'
+                      ),
                     ),
+                    const SizedBox(height: 10),
+                    ClipRRect(child:
+                      Container(
+                        color: Colors.green,
+                        child: Text('已登入志工服務中',
+                           style: TextStyle(
+                               color: Colors.white,
+                                fontSize: 16,
+                                fontFamily: 'Roboto'
+                          )
+                        ,)
+                      ),
+                    )
                   ],
                 ),
               ),
-            )
-        ],
-      );
+            ],
+          ),
+        ),
+      )
+
+    ],
+  )
+  );
   }
 }
 

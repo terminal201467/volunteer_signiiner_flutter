@@ -71,6 +71,7 @@ flutter:
     - assets/images/appIconPDF.pdf
     - assets/images/qrcode.png
     - assets/images/qrcode.viewfinder.png
+    - assets/images/leftBack.png
 
   # https://flutter.dev/assets-and-images/#resolution-aware
 
