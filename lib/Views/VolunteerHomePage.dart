@@ -68,8 +68,16 @@ Widget build(BuildContext context) {
             ],
           ),
         ),
-      )
+      ),
+      SliverToBoxAdapter(
+        child: Column(
+          children: [
+            Center(child: Text('本週簽到')),
+            setWeekListView(context, serveDate)
 
+          ],
+        ),
+      ),
     ],
   )
   );
@@ -81,17 +89,18 @@ Widget build(BuildContext context) {
 //Contents
 
 //WeekListView
-Widget setWeekListView(BuildContext context, List<int> serveDate) {
-  final List<String> weekDays = ["一", "二", "三", "四", "五", "六", "日"];
-  return ListView(
-    scrollDirection: Axis.horizontal,
-    children: const [
+// Widget setWeekListView(BuildContext context, List<int> serveDate) {
+//   final List<String> weekDays = ["一", "二", "三", "四", "五", "六", "日"];
+//   return ListView.builder(
+//           itemBuilder: weekDays.length,
+//           scrollDirection: Axis.horizontal,
+//           itemBuilder: (context, index) {
+//             return ListCell(context, , date)
+//           })
+//   );
+// }
 
-    ],
-  );
-}
-
-Widget setListCell(BuildContext context, String weekDateText, int date) {
+Widget ListCell(BuildContext context, String weekDateText, int date) {
   final squareWidth = MediaQuery.of(context).size.width;
   final squareHeight = MediaQuery.of(context).size.height;
 
