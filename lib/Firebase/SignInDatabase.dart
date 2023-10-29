@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:volunteer_signiiner_flutter/Model/Model.dart';
+import 'package:volunteer_signiiner_flutter/Model/User.dart';
 
 class SignInDataBase {
 
