@@ -89,8 +89,18 @@ Widget build(BuildContext context) {
           ],
         ),
       ),
-    ],
-  )
+      SliverToBoxAdapter(
+        child: Container(
+          child: TextButton(
+              child: const Text('登出'),
+              onPressed: (() {
+                
+              }),
+            ),
+          )
+        ),
+      ],
+    )
   );
   }
 }
