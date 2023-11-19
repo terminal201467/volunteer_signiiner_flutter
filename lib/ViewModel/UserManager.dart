@@ -1,5 +1,3 @@
-import 'dart:math';
-import 'package:flutter/material.dart';
 import 'package:volunteer_signiiner_flutter/Model/User.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -25,7 +23,7 @@ List<int> serveMonthDates = [];
 LoginState currentLoginState = LoginState.notLoggedIn;
 
 void initState() {
-  getUserData();
+  getUserData('');
   if (currentLoginState == LoginState.notLoggedIn)
     currentUser = User(gender: '未知', identity: '未知', name: '匿名', phoneNumber: '00-0000-0000', signUpTimeStamp: '00-00-00', uid: '0000000000');
   else 

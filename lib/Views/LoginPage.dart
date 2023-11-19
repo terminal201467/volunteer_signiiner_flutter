@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 class LoginPageState extends State<LoginPage> {
 
@@ -58,6 +59,8 @@ class LoginPageState extends State<LoginPage> {
                 ),
                 onPressed: () {
                   // 按钮被点击时的操作
+                  FirebaseCrashlytics.instance.crash();
+                  debugPrint('登入action');
                 },
                 child: const Text('登入',
                       textAlign: TextAlign.center, // 文本水平居中对齐

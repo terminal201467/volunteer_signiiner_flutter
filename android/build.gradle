@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '1.9.0'
     repositories {
         google()
         mavenCentral()
@@ -7,9 +7,18 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath 'com.google.gms:google-services:4.3.10'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
     }
 }
+
+//好像
+// plugins {
+//     id 'com.android.application' version '7.2.0' apply false
+//     id 'com.google.gms.google-services' version '4.3.10' apply false
+//     id 'com.google.firebase.crashlytics' version '2.7.1' apply false
+// }
 
 allprojects {
     repositories {

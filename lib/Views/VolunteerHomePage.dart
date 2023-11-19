@@ -39,14 +39,14 @@ Widget build(BuildContext context) {
               height: 100,
               child: Column(
                 children: [
-                  Text('志工編號：${viewModel.userManager.currentUser.identity}',
+                  Text('志工編號：${viewModel.userManager.currentUser?.identity}',
                       style: const TextStyle(
                         fontSize: 16,
                         fontFamily: 'Roboto'
                       ),
                     ),
                   const SizedBox(height: 10),
-                  Text('Hello，${viewModel.userManager.currentUser.name}!',
+                  Text('Hello，${viewModel.userManager.currentUser?.name}!',
                       style: const TextStyle(
                         fontSize: 16,
                         fontFamily: 'Roboto'

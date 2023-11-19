@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "374352474830",
+    "project_id": "volunteersigniiner",
+    "storage_bucket": "volunteersigniiner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374352474830:android:fcd47abff2fbfeb882d69f",
+        "android_client_info": {
+          "package_name": "com.example.volunteer_signiiner_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmhvePsbU4fsq425tO7M6VTz7Eq5mQ26A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374352474830-f4f74997v0g7tanteccvcasptmviib84.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "374352474830-7lm73c8s0dsdroi7h08e0ubmhoice2ob.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mj.VolunteerSigniiner"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
