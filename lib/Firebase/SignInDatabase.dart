@@ -18,7 +18,7 @@ class SignInDataBase {
         });
         print('Data added');
     }
-    //Read
+    //Read 
     Future<List<Object?>> readSignInData() async {
         QuerySnapshot snapshot = await _firebaseStore.collection('signInData').get();
         return snapshot.docs.map((doc) => doc.data()).toList();
