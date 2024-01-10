@@ -1,6 +1,7 @@
 import 'package:volunteer_signiiner_flutter/Model/User.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+
 enum LoginState {
   loggedIn, 
   notLoggedIn, 
