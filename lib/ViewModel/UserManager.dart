@@ -3,9 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:bloc/bloc.dart';
 
 
-enum UserManagerEvent { login, logout }
+enum UserManagerEvent { login, logout, register}
 
-enum UserManagerState { loggedIn, loggedOut }
+enum UserManagerState { loggedIn, loggedOut, registerSuccessed, registerFailed }
 
 typedef ErrorCallback = void Function(String errorMessage);
 
@@ -17,11 +17,16 @@ class UserManagerBloc extends Bloc<UserManagerEvent, UserManagerState> {
     switch (event) {
       case UserManagerEvent.login:
         // 在這裡處理登錄邏輯，例如驗證等操作
+        //登入
         yield UserManagerState.loggedIn;
         break;
       case UserManagerEvent.logout:
+        //登出
         // 在這裡處理登出邏輯
         yield UserManagerState.loggedOut;
+        break;
+      case UserManagerEvent.register:
+        //註冊
         break;
     }
   }

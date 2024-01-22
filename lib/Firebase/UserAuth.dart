@@ -1,13 +1,13 @@
-// ignore_for_file: avoid_print, unused_local_variable, body_might_complete_normally_nullable
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
-class Auth {
+class UserAuth {
 
   final GoogleSignIn _googleSignIn = GoogleSignIn();
+
   final FirebaseAuth _fireBaseAuth = FirebaseAuth.instance;
+
   final FacebookAuth _facebookAuth = FacebookAuth.instance;
     //一般註冊
       Future<void> register(String email, String password) async {
@@ -23,7 +23,7 @@ class Auth {
   }
 
     //一般登入
-    Future<User?> signInWithEmailPassword(String email, String password) async {
+    Future<User?> loginWithEmailPassword(String email, String password) async {
         try {
         UserCredential userCredential = await _fireBaseAuth.signInWithEmailAndPassword(
             email: email,
