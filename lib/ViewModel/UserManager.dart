@@ -62,5 +62,4 @@ class UserManagerBloc extends Bloc<UserManagerEvent, UserManagerState> {
   void register(String email, String password) async {
     auth.register(email, password);
   }
-
 }

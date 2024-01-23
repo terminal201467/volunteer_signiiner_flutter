@@ -9,6 +9,14 @@ class UserAuth {
 
   UserModel? get currentUser => _currentUser;
 
+  static final UserAuth _instance = UserAuth._internal();
+
+  factory UserAuth() {
+    return _instance;
+  }
+
+  UserAuth._internal(); 
+
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   final FirebaseAuth _fireBaseAuth = FirebaseAuth.instance;
