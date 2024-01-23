@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:volunteer_signiiner_flutter/Views/LoginPage.dart';
 import 'package:volunteer_signiiner_flutter/Views/ManagerHomePage.dart';
 import 'package:volunteer_signiiner_flutter/Views/RegisterPage.dart';
-import 'package:volunteer_signiiner_flutter/Views/VolunteerHomePage.dart';
 import 'Views/DivideMassesPage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
