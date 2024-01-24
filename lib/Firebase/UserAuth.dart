@@ -23,7 +23,7 @@ class UserAuth {
 
   final FacebookAuth _facebookAuth = FacebookAuth.instance;
     //一般註冊
-      Future<void> register(String email, String password) async {
+    Future<void> register(String email, String password) async {
         try {
             UserCredential userCredential = await _fireBaseAuth.createUserWithEmailAndPassword(
             email: email,
@@ -72,10 +72,11 @@ class UserAuth {
               _currentUser?.uid = googleSignInAccount.id;
             } else {
                 print('Google Sign-In cancelled');
-                currentUserName = null;
+              _currentUser = null;
             }
           } catch (error) {
-        print('Google Sign-In error: $error');
+            print('Google Sign-In error: $error');
+            _currentUser = null;
         }
     }
 
@@ -101,5 +102,9 @@ class UserAuth {
       } catch (e) {
         print('Facebook Login error: $e');
       }
+    }
+
+    Future<void> logout() async {
+      await FirebaseAuth.instance.signOut();
     }
 }

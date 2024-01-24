@@ -1,5 +1,5 @@
 import 'package:volunteer_signiiner_flutter/Firebase/UserAuth.dart';
-import 'package:volunteer_signiiner_flutter/Model/User.Modeldart';
+import 'package:volunteer_signiiner_flutter/Model/UserModel.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:bloc/bloc.dart';
 
@@ -11,29 +11,36 @@ enum UserManagerState { loggedIn, loggedOut, registerSuccessed, registerFailed }
 typedef ErrorCallback = void Function(String errorMessage);
 
 class UserManagerBloc extends Bloc<UserManagerEvent, UserManagerState> {
+  
     UserManagerBloc() : super(UserManagerState.loggedOut);
 
   UserAuth auth = UserAuth();
+
+  String email = ""; 
+
+  String password = "";
 
   @override
   Stream<UserManagerState> mapEventToState(UserManagerEvent event) async* {
     switch (event) {
       case UserManagerEvent.normalLogin:
-        // 在這裡處理登錄邏輯，例如驗證等操作
-        //登入
+        login(email, password);
         yield UserManagerState.loggedIn;
         break;
       case UserManagerEvent.googleLogin:
+        googleLogin();
         yield UserManagerState.loggedIn;
         break;
       case UserManagerEvent.facebookLogin:
+        facebookLogin();
         yield UserManagerState.loggedIn;
         break;
       case UserManagerEvent.logout:
+        logout();
         yield UserManagerState.loggedOut;
         break;
       case UserManagerEvent.register:
-        //註冊
+        register(email, password);
         break;
     }
   }
@@ -45,7 +52,7 @@ class UserManagerBloc extends Bloc<UserManagerEvent, UserManagerState> {
 
   //登出
   void logout() async {
-
+    auth.logout();
   }
 
   //google登入

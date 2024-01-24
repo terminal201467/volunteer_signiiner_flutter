@@ -7,6 +7,7 @@ class UserDatabase {
 
   //Create
   void createFireBaseData() {
+    
   }
   //Read
   void readFirebaseData() {

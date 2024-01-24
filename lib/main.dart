@@ -8,6 +8,12 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'firebase_options.dart';
 
 void main() {
+  initState();
+  runApp(const MainApp());
+}
+
+//2.確認該APP登入狀態
+void initState() {
   try {
     WidgetsFlutterBinding.ensureInitialized();
     Firebase.initializeApp(
@@ -20,6 +26,7 @@ void main() {
 }
 
 class MainApp extends StatelessWidget {
+
   const MainApp({Key? key}) : super(key: key);
 
   @override

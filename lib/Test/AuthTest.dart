@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,6 +15,7 @@ class MockLoginResult extends Mock implements LoginResult {}
 
 void main() {
   group('UserAuth Tests', () {
+    Firebase.initializeApp();
     late MockFirebaseAuth mockFirebaseAuth;
     late MockGoogleSignIn mockGoogleSignIn;
     late MockFacebookAuth mockFacebookAuth;
@@ -43,8 +45,8 @@ void main() {
         email: '',
         password: '',
       )).thenAnswer((_) async => MockUserCredential());
-      final user = await userAuth.loginWithEmailPassword('test@example.com', 'password123');
-      expect(user, isNotNull);
+      await userAuth.loginWithEmailPassword('test@example.com', 'password123');
+      expect(userAuth.currentUser, isNotNull);
     });
 
     // 測試Google登入
@@ -54,7 +56,7 @@ void main() {
       verify(mockGoogleSignIn.signIn()).called(1);
       // Add your assertions here to verify the Google Sign-In behavior
     });
-    
+
     // 測試Facebook登入
     test('Facebook Login successful', () async {
       when(mockFacebookAuth.login()).thenAnswer((_) async => MockLoginResult());
