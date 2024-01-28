@@ -50,6 +50,7 @@ dependencies:
   flutter_bloc: ^8.0.0
   bloc: ^8.1.2
   mockito: ^5.0.11
+  fake_cloud_firestore: ^2.4.8
 
 
 dev_dependencies:
